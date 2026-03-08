@@ -22,14 +22,14 @@ function updateConversion(source) {
         if (isNaN(brlVal)) {
             usdtInput.value = '';
         } else {
-            usdtInput.value = (brlVal / state.bidPrice).toFixed(2).replace('.', ',');
+            usdtInput.value = (brlVal / state.bidPrice).toFixed(3).replace('.', ',');
         }
     } else if (source === 'usdt') {
         const usdtVal = parseFloat(formatNumber(usdtInput.value));
         if (isNaN(usdtVal)) {
             brlInput.value = '';
         } else {
-            const val = (usdtVal * state.bidPrice).toFixed(2);
+            const val = (usdtVal * state.bidPrice).toFixed(3);
             brlInput.value = val.replace('.', ',');
         }
     }
