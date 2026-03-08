@@ -40,8 +40,8 @@ A modern, fast, and privacy-focused currency converter designed to provide real-
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/usdt-converter.git
-   cd usdt-converter
+   git clone https://github.com/LuizAlexandrePaiva/usdt-brl-converter.git
+   cd usdt-brl-converter
    ```
 
 2. **Install dependencies**:
