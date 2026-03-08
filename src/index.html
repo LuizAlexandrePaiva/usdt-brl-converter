@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>USDT Converter</title>
+
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1a2e1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="USDT">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <div class="header-left">
+        <span class="status-dot"></span>
+        <h1>USDT/BRL</h1>
+      </div>
+      <div class="header-right">
+        <span id="last-update">--:--:--</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="display-section">
+        <div id="loading-state" class="skeleton-container">
+          <div class="skeleton skeleton-title"></div>
+          <div class="skeleton skeleton-text"></div>
+        </div>
+
+        <div id="error-state" class="hidden">
+          <p>Falha ao carregar cotação</p>
+          <button id="retry-btn">Tentar novamente</button>
+        </div>
+
+        <div id="rate-display" class="hidden">
+          <h2 id="current-rate" class="rate-value">R$ 0,0000</h2>
+          <span id="daily-change" class="rate-change">0.00% hoje</span>
+        </div>
+
+        <div class="progress-wrapper">
+          <div class="progress-bg">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+          <span class="next-update-text">próxima atualização em <span id="countdown">30</span>s</span>
+        </div>
+      </section>
+
+      <section class="converter-section">
+        <div class="input-group">
+          <label for="brl-input">BRL</label>
+          <div class="input-wrapper">
+            <span class="currency-symbol">R$</span>
+            <input type="text" id="brl-input" inputmode="decimal" placeholder="0,00">
+          </div>
+        </div>
+
+        <button id="swap-btn" class="swap-btn" aria-label="Inverter moedas">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 4V20M7 20L3 16M7 20L11 16M17 20V4M17 4L13 8M17 4L21 8" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div class="input-group">
+          <label for="usdt-input">USDT</label>
+          <div class="input-wrapper usdt-wrapper">
+            <span class="currency-symbol">₮</span>
+            <input type="text" id="usdt-input" inputmode="decimal" placeholder="0.00">
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="offline-banner" class="hidden">Sem conexão - cotação em cache</div>
+
+  <script type="module" src="/js/api.js"></script>
+  <script type="module" src="/js/converter.js"></script>
+  <script type="module" src="/js/ui.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((registration) => {
+          console.log('SW registered with scope:', registration.scope);
+        }).catch((error) => {
+          console.error('SW registration failed:', error);
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
