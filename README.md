@@ -75,5 +75,5 @@ The project utilizes **Netlify Functions** as a proxy layer. This design choice:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-Developed by [Luiz]
+Developed by Luiz 🤘
 
