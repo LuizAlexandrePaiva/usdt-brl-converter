@@ -1,58 +1,78 @@
 # 💰 USDT/BRL Converter PWA
 
-Um conversor de moedas moderno, rápido e focado em privacidade para converter USDT (Tether) para BRL (Real Brasileiro) em tempo real, utilizando taxas do mercado cripto.
+A modern, fast, and privacy-focused currency converter designed to provide real-time USDT (Tether) to BRL (Brazilian Real) conversion rates with premium aesthetics and high precision.
 
-![USDT Converter Preview](https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/svg/color/usdt.svg)
+![Project Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+![Tech](https://img.shields.io/badge/Stack-Vanilla_JS_|_Netlify_Functions-blue?style=for-the-badge)
 
-## 🚀 Funcionalidades
+---
 
-- **Taxas em Tempo Real**: Busca cotações atualizadas a cada 30 segundos via Brapi API.
-- **Precisão Cripto**: Prioriza o `regularMarketPrice` (taxa de corretoras como Binance) para garantir centavos precisos na conversão.
-- **PWA (Progressive Web App)**: Pode ser instalado no celular ou desktop e funciona offline (usando a última cotação em cache).
-- **Design Moderno**: Interface escura (Dark Mode) com estética premium e animações suaves.
-- **Conversão Bidirecional**: Converta de USDT para BRL ou de BRL para USDT instantaneamente.
+## 🚀 Key Features
 
-## 🛠️ Tecnologias
+- **Real-Time Data**: Fetches the latest cryptocurrency market rates every 30 seconds via Brapi API.
+- **Crypto-Centric Accuracy**: Prioritizes `regularMarketPrice` from major exchanges (like Binance) to ensure decimal precision.
+- **PWA (Progressive Web App)**: Installable on mobile and desktop. Works offline using the last cached rate.
+- **Premium Dark UI**: High-end aesthetic with glassmorphism, smooth animations, and responsive design.
+- **Bi-directional Conversion**: Instantly switch between USDT to BRL and BRL to USDT.
 
-- **Frontend**: HTML5 Semântico, Vanilla CSS, JavaScript (ES6+ Modules).
-- **Backend**: Netlify Functions (Node.js) para chamadas de API seguras.
-- **API**: [Brapi.dev](https://brapi.dev/) para dados de mercado.
-- **PWA**: Service Workers e Web Manifest.
+## 🛠️ Technology Stack
 
-## 📦 Como Rodar Localmente
+- **Frontend**: 
+  - Semantic HTML5
+  - Modern Vanilla CSS (Custom properties, Flexbox/Grid)
+  - ES6+ JavaScript Modules
+- **Backend (Serverless)**: 
+  - Netlify Functions (Node.js) to securely handle API requests and protect keys.
+- **API Integration**: 
+  - [Brapi.dev](https://brapi.dev/) for reliable market data.
+- **Capabilities**:
+  - Service Workers for offline support.
+  - Web App Manifest for native installation.
 
-1. **Clone o repositório (Privado)**:
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- [Netlify CLI](https://docs.netlify.com/cli/get-started/) (for local development)
+
+### Installation
+
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/SEU_USUARIO/usdt-converter.git
+   git clone https://github.com/your-username/usdt-converter.git
    cd usdt-converter
    ```
 
-2. **Instale as dependências**:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Configure as credenciais**:
-   Crie um arquivo `.env` na raiz do projeto:
+3. **Environment Setup**:
+   Create a `.env` file in the root directory:
    ```env
-   BRAPI_TOKEN=seu_token_aqui
+   BRAPI_TOKEN=your_brapi_api_token
    ```
 
-4. **Inicie o servidor de desenvolvimento**:
-   Necessário ter o [Netlify CLI](https://docs.netlify.com/cli/get-started/) instalado.
+4. **Run Locally**:
    ```bash
    netlify dev
    ```
-   Acesse em `http://localhost:8888`.
+   Open `http://localhost:8888` in your browser.
 
-## 🌐 Deploy (Opcional)
+## 🏗️ Architecture Note
 
-Este projeto foi desenvolvido para ser hospedado via **Netlify**, utilizando **Netlify Functions** para garantir a segurança da chave de API. No entanto, ele pode ser adaptado para qualquer plataforma que suporte funções serverless.
+The project utilizes **Netlify Functions** as a proxy layer. This design choice:
+1.  **Protects the API Token**: Sensitive credentials are never exposed to the client-side.
+2.  **Prevents CORS Issues**: Centralizes API communication through a serverless environment.
+3.  **Lightweight Frontend**: Keeps the client-side bundle minimal and fast.
 
-> [!TIP]
-> Para usar como portfólio no GitHub, você não precisa divulgar o link do site no "About" do repositório. O código por si só já demonstra suas habilidades com **JavaScript Moderno (ES6)**, **manipulação de APIs**, **PWAs** e **estilização avançada**.
+---
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está sob a licença [MIT](LICENSE). Sinta-se à vontade para usar, modificar e distribuir o código para fins de aprendizado ou portfólio.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+Developed by [Luiz]
 
