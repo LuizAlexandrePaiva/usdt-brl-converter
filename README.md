@@ -13,6 +13,7 @@ A modern, fast, and privacy-focused currency converter designed to provide real-
 - **Crypto-Centric Accuracy**: Prioritizes `regularMarketPrice` from major exchanges (like Binance) to ensure decimal precision.
 - **PWA (Progressive Web App)**: Installable on mobile and desktop. Works offline using the last cached rate.
 - **Premium Dark UI**: High-end aesthetic with glassmorphism, smooth animations, and responsive design.
+- **PT-BR Interface**: Fully localized interface for Brazilian users.
 - **Bi-directional Conversion**: Instantly switch between USDT to BRL and BRL to USDT.
 
 ## 🛠️ Technology Stack
